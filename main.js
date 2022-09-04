@@ -1,60 +1,60 @@
 // The Odin Project
 
-function getComputer() {
-	const myArray = ["Rock", "Papper", "Scissors"];
-	const luck = Math.floor(Math.random() * myArray.length);
+function game() {
+	for (let i = 0; i < 5; i++) {
+		const playerSelection = prompt("Choice", "Rock, Papper, Scissors");
 
-	//console.log(myArray[luck]);
-	return myArray[luck];
-}
+		function getComputer() {
+			const myArray = ["Rock", "Papper", "Scissors"];
+			const luck = Math.floor(Math.random() * myArray.length);
 
-//console.log(getComputer());
+			return myArray[luck];
+		}
 
-function playRound(playerSelection, computerSelection) {
+		const computerSelection = getComputer();
+
+		function playRound(playerSelection, computerSelection) {
 	
-	if(playerSelection == "Rock") {
+			if(playerSelection == "Rock") {
 		
-		if(computerSelection == "Papper") {
-			console.log("You Lose! Papper beats Rock");
-		}
-		else if(computerSelection == "Rock") {
-			console.log("There are no winners");
-		}
-		else if(computerSelection == "Scissors") {
-			console.log("You Win! Rock beats Scissors");
-		}
-	}
+				if(computerSelection == "Papper") {
+					console.log("You Lose! Papper beats Rock");
+				}
+				else if(computerSelection == "Rock") {
+					console.log("There are no winners");
+				}
+				else if(computerSelection == "Scissors") {
+					console.log("You Win! Rock beats Scissors");
+				}
+			}
 
-	else if(playerSelection == "Papper") {
-		
-		if(computerSelection == "Papper") {
-			console.log("There are no winers");
-		}
-		else if(computerSelection == "Rock") {
-			console.log("You Win! Papper beats Rock");
-		}
-		else if(computerSelection == "Scissors") {
-			console.log("You Lose! Scissors beats Papper");
-		}
-	}
+			else if(playerSelection == "Papper") {
+				
+				if(computerSelection == "Papper") {
+					console.log("There are no winers");
+				}
+				else if(computerSelection == "Rock") {
+					console.log("You Win! Papper beats Rock");
+				}
+				else if(computerSelection == "Scissors") {
+					console.log("You Lose! Scissors beats Papper");
+				}
+			}
 
-	else if(playerSelection == "Scissors") {
-			
-		if(computerSelection == "Papper") {
-			console.log("You Win! Scissors beats Papper");
+			else if(playerSelection == "Scissors") {
+				if(computerSelection == "Papper") {
+					console.log("You Win! Scissors beats Papper");
+				}
+				else if(computerSelection == "Rock") {
+					console.log("You Lose! Rock beats Scissors");
+				}
+				else if(computerSelection == "Scissors") {
+					console.log("There are no winers");
+				}
+			}
 		}
-		else if(computerSelection == "Rock") {
-			console.log("You Lose! Rock beats Scissors");
-		}
-		else if(computerSelection == "Scissors") {
-			console.log("There are no winers");
-		}
+		playRound(playerSelection, computerSelection);
 	}
 }
 
-const playerSelection = "Rock";
-const computerSelection = getComputer();
-document.write(computerSelection);
-
-console.log(playRound(playerSelection, computerSelection));
-
+game();
