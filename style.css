@@ -1,9 +1,41 @@
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 90vh;
 	color: wheat;
 	background: #00010f;
+}
+
+.container {
+	max-width: 420px;
+	margin: 0 auto;
+	background: red;
+	text-align: center;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+h2 {
+	color: black;
+	margin: 0;
+	font-size: 38px;
+}
+
+#start-game {
+	font-size: 35px;
+}
+
+#result {
+	font-size: 30px;
+}
+
+.container-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.container-btn>button {
+	width: 100%;
+	margin: 10px;
+	height: 60px;
 }
